@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import AdminDashboard from './components/AdminDashboard'
+import UserForm from './components/UserForm'
 
-export default App;
+
+import './App.css'
+
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={AdminDashboard} />
+      <Route exact path="/login" component={UserForm} />
+    </Switch>
+  </BrowserRouter>
+)
+
+export default App
